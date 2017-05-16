@@ -1,0 +1,335 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+//global color variables
+$bg: #f8f8f8;
+$ltgrey: #ccc;
+$grey: #DDDDDD;
+$darkgrey:#AEB6BF;
+$medgrey: #555;
+$dkgrey: #888;
+$black: #222;
+$highlight: #ea463d;
+$blue:#337ab7;
+$white:#FFFFFF;
+$black:#000000;
+
+body {
+    background: $bg;
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    .progress_bar {
+        width: 68%;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 50px;
+        height: 50px;
+        z-index: 10;
+        hr.all_steps {
+            width: 64%;
+            height: 7px;
+            border: none;
+            background: $grey;
+            border-bottom: 1px solid #fff;
+            position: absolute;
+            bottom: 10px;
+            left: 80px;
+            z-index: 1;
+        }
+        hr.current_steps {
+            width: 0%;
+            border: 0;
+            height: 5px;
+            background: $blue;
+            position: absolute;
+            bottom: 12px;
+            left: 10%;
+            z-index: 3;
+        }
+        div.step {
+            float: left;
+            width: 20%;
+            height: 35px;
+            text-align: center;
+            font-size: 12px;
+            color: $ltgrey;
+            position: relative;
+            text-shadow: 1px 1px #fff;
+            &:before {
+                position: absolute;
+                width: 40px;
+                height: 38px;
+                border-radius: 20px;
+                border: 2px solid transparent;
+                background: $blue;
+                bottom: -4px;
+                left: 49%;
+                content: '';
+                z-index: 4;
+                display: none;
+            }
+            &:after {
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                border-radius: 20px;
+                bottom: 12px;
+                left: 50%;
+                margin-left: 1px;
+                content: '';
+                z-index: 2;
+            }
+            &.complete {
+                content: '\2713';
+                display: inline-block;
+                color: red;
+                padding: 0 6px 0 0;
+                cursor: pointer;
+                &:before {
+                    content: '\2713';
+                    display: inline-block;
+                    color: white;
+                    padding: 0 6px 0 0;
+                    cursor: pointer;
+                    padding-top: 4px;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                &:hover {
+                    color: $medgrey;
+                }
+            }
+        }
+        span.round-tab {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 50px;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            z-index: 2;
+            position: absolute;
+            text-align: center;
+            font-size: 14px;
+            .progress-bar-images {
+                padding-top: 10px;
+            }
+            .cart {
+                color: $black;
+                font-weight: bold;
+                padding-top: 30px;
+                margin-left: -9px;
+            }
+            .payment {
+                padding-top: 35px;
+            }
+        }
+        .current span.round-tab {
+            background: $blue;
+            border: 2px solid #5bc0de
+        }
+    }
+    .block {
+        position: absolute;
+        width: 100%;
+        left: 100%;
+        height: auto;
+        .table-products {
+            table-layout: fixed;
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 80%;
+        }
+        .table-columns {
+            color: $darkgrey;
+        }
+        .wrap {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 84px;
+            .delivery-btn-group {
+                text-align: center;
+                .delivery-btn {
+                    border: 2px solid $grey;
+                    border-radius: 25px;
+                    width: 170px;
+                    font-weight: bold;
+                }
+            }
+            .table-info {
+                width: 60%;
+                margin: 0 auto;
+                line-height: 30px;
+                font-weight: bold;
+                font-size: 13px;
+                table-layout: fixed;
+                margin: 0 auto;
+                textarea {
+                    width: 300px;
+                    height: 90px;
+                    border-radius: 5px;
+                    background-color: #ddd;
+                    text-align: left;
+                }
+            }
+            input[type=text] {
+                background-color: #ddd;
+                text-align: left;
+                border-radius: 15px;
+                width: 300px;
+                color: $darkgrey;
+                border: none;
+                padding-left: 12px;
+            }
+            .select-option {
+                width: 300px;
+                background-color: #ddd;
+                border-radius: 15px;
+                height: 35px;
+            }
+        }
+        ul {
+            list-style-type: none;
+        }
+        .delivery-table {
+            padding-top: 15px;
+            margin-top: 75px;
+        }
+        .shopping-btn {
+            border: 2px solid $blue;
+            border-radius: 25px;
+            width: 200px;
+            color: $blue;
+        }
+        .promo-code-btn {
+            background-color: #ddd;
+            border-radius: 25px;
+            width: 260px;
+            color: grey;
+        }
+        .promo-image {
+            background-color: #FFFFFF;
+            height: 30px;
+            float: left;
+        }
+        .promo-text {
+            float: left;
+            font-style: italic;
+            margin-left: 12px;
+            padding-top: 4px;
+            font-size: 16px;
+        }
+        .items {
+            display: inline-flex;
+            padding-top: 28px;
+        }
+        .item-description {
+            font-weight: bold;
+            padding-left: 20px;
+            font-size: 12px;
+            width: 170px;
+        }
+        .item-type {
+            padding-top: 20px;
+            font-style: italic;
+            color: $darkgrey;
+            font-family: serif;
+        }
+        .items-color {
+            font-style: italic;
+            color: $darkgrey;
+            font-family: serif;
+            padding-top: 40px;
+        }
+        .price {
+            color: red;
+            font-weight: bold;
+            padding-top: 45px;
+        }
+        .cost {
+            color: $black;
+            font-weight: bold;
+            padding-top: 45px;
+        }
+        .arrow-right-next {
+            float: right;
+        }
+        .arrow-right-promo-code {
+            float: right;
+            color: $black;
+            font-size: 18px;
+            padding-top: 4px;
+        }
+        .total-heading {
+            font-size: 18px;
+            padding-top: 2px;
+            color: $darkgrey;
+            .total-price {
+                font-size: 12px;
+                color: black !important;
+            }
+        }
+        .next-step {
+            border: 2px solid $blue;
+            background-color: $blue;
+            border-radius: 25px;
+            width: 160px;
+            color: #FFFFFF;
+        }
+        .next-step-delivery {
+            border: 2px solid $blue;
+            background-color: $blue;
+            border-radius: 25px;
+            width: 150px;
+            color: #FFFFFF;
+        }
+        .back-btn {
+            border: 2px solid $blue;
+            border-radius: 25px;
+            width: 150px;
+            color: $blue;
+        }
+        .item-quantity-btn {
+            text-align: center;
+            width: 80px;
+            padding-top: 30px;
+            font-size: 8px;
+            .count-input {
+                position: relative;
+                background-color: $grey;
+                border-radius: 25px;
+            }
+            .count-input input {
+                height: 30px;
+                font-size: 13px;
+                border: none;
+                background: none;
+                text-align: center;
+            }
+            .count-input .incr-btn {
+                position: absolute;
+                color: $black;
+                width: 30px;
+                font-size: 22px;
+                top: 50%;
+                right: 0;
+                margin-top: -15px;
+                text-decoration: none;
+            }
+            .count-input .incr-btn:first-child {
+                left: 0;
+                top: 46%;
+            }
+        }
+        .product-images {
+            height: 50px;
+        }
+    }
+}
