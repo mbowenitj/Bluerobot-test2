@@ -7,6 +7,7 @@
       <title>Blue Robot</title>
       <link rel="apple-touch-icon" href="apple-touch-icon.png">
       <link href="css/progress-wizard.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Place favicon.ico in the root directory -->
       <!-- build:css styles/vendor.css -->
       <!-- bower:css -->
@@ -40,261 +41,208 @@
       <!-- <script src="scripts/bootstrap.min.js"></script> -->
       <!-- endbuild -->
    </head>
-   <body ng-app="myApp" ng-controller="myCtrl">
-      <div class="container">
-         <div class="progress_bar">
-            <hr class="all_steps">
-            <hr class="current_steps">
-            <div class="step current active" id="step1" data-step="1">
-               <span class="round-tab">
-                  <img src="/images/bag_black.png" class="progress-bar-images">
-                  <p class="cart">Cart</p>
-               </span>
+
+   <body>
+
+  <nav class="navbar navbar-default">
+  <div class="nav-bar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#collapse-left" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="#"><b>My Feed</b></a>
+      <a class="navbar-brand bluerobot-text" href="#">BLUEROBOT</a>
+       <span class="live-text">LIVE</span>
+       <img src="/images/ninja.jpg" class="live-icon">
+    </div>
+
+    <div class="collapse navbar-collapse pull-sm-left" id="collapse-left">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://twitter.com/login">Twitter<span class="sr-only">(current)</span></a></li>
+        <li><a href="https://www.instagram.com/?hl=en">Instagram</a></li>
+        <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="select-option">
+    <select class="left-select-option">
+      <option value="volvo">Incoming Feed</option>
+      <option value="saab">Twitter</option>
+      <option value="opel">Instagram</option>
+    </select>
+    <select class="right-select-option">
+      <option value="volvo">Default view</option>
+      <option value="saab">Saab</option>
+      <option value="opel">Opel</option>
+      <option value="audi">Audi</option>
+    </select>
+  </div>
+
+  <div class="myfeeds-container">
+      <div class="row">
+        <div class="col-sm-6 firstrow-leftfeed">
+            <img src="/images/tshepo.jpg">
+              <a class="btn btn-social-icon btn-twitter">
+               <span class="fa fa-twitter twitter1-icon"></span>
+              </a>
+          <div class="firstfeed">
+            <h4>Username 1 @handle</h4>
+            <p>Want a dose of #TwitterDaily? RT this
+              and we'll make sure you never miss the
+              insights!</p>
+              <p class="posted-date">Posted 30s ago</p>
+            <hr>
+            <div class="share-feed1">
+              <h4 class="glyphicon glyphicon-eye-open"></h4><a href="#">VIEW ORIGINAL</a></span>&nbsp;&nbsp;
+              <i class="fa fa-chain" style="font-size:20px;"></i><a href="#">SHARE</a>
             </div>
-            <div class="step" id="step2" data-step="2">
-               <span class="round-tab">
-                  <img src="/images/pin_grey.png" class="progress-bar-images">
-                  <p class="cart">Delivery</p>
-               </span>
+          </div>
+        </div>
+        <div class="col-sm-6 firstrow-rightfeed">
+          <img src="/images/ninja.jpg">
+           <a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/?hl=en">
+             <span class="fa fa-instagram instagram1-icon"></span>
+           </a>
+          <div class="firstfeed">
+            <h4>Username 1 @handle</h4>
+            <p>#InstagramDaily</p>
+            <div class="instagram-feed1">
+              <div class="instagram-row1-images">
+                <img src="/images/soft2.jpg" class="instagram-row1-images">
+              </div>
+              <div class="instagram-row1-images">
+                <img src="/images/soft4.jpg" class="instagram-row1-images">
+              </div>
+              <div class="instagram-row1-images">
+                <img src="/images/soft1.jpg" class="instagram-row1-images">
+              </div>
+              <div class="instagram-row1-images">
+                <img src="/images/soft3.jpg" class="instagram-row1-images">
+              </div><br><br>
+
             </div>
-            <div class="step" id="step3" data-step="3">
-               <span class="round-tab">
-                  <img src="/images/credit card_grey.png" class="progress-bar-images">
-                  <p class="cart payment">Payment</p>
-               </span>
+            <p class="posted-date">Posted 5m ago</p>
+            <hr>
+            <div class="share-feed2">
+              <h4 class="glyphicon glyphicon-eye-open"></h4><a href="#">VIEW ORIGINAL</a></span>&nbsp;&nbsp;
+              <i class="fa fa-chain" style="font-size:20px;"></i><a href="#">SHARE</a>
             </div>
-            <div class="step" id="step4" data-step="4">
-               <span class="round-tab">
-                  <img src="/images/checkmark_grey.png" class="progress-bar-images">
-                  <p class="cart">Confirmation</p>
-               </span>
-            </div>
-         </div>
-         <div class="block" id="block1" style="left: 0%;">
-            <!-- <div class="wrap"> -->
-            <table class="table table-products">
-               <thead>
-                  <tr class="table-columns">
-                     <th>Product</th>
-                     <th></th>
-                     <th>Color</th>
-                     <th>Size</th>
-                     <th>Price</th>
-                     <th>Amount</th>
-                     <th>Cost</th>
-                     <th></th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr ng-repeat = "item in products">
-                     <td class="items">
-                        <img ng-src="{{item.source}}" class="product-images">
-                        <div class="item-description">
-                           {{item.item}}
-                           <p class="item-type">{{item.type}}</p>
-                        </div>
-                     </td>
-                     <td></td>
-                     <td>
-                        <p class="items-color">{{item.color}}</p>
-                     </td>
-                     <td>
-                        <p class="items-color">{{item.size}}</p>
-                     </td>
-                     <td class="price">${{item.price}}</td>
-                     <td>
-                        <div class="item-quantity-btn">
-                           <div class="count-input space-bottom">
-                              <a class="incr-btn qtyminus" data-action="decrease" href="#" ng-click="decrease(item);">–</a>
-                              <input type='text' ng-model="item.amount" name='quantity' min="1" value='0' class='input-small1 qty1' size="1" readonly />
-                              <a class="incr-btn" data-action="increase" href="#" ng-click="increase(item);">&plus;</a>
-                           </div>
-                     <td class="cost">{{item.amount * item.price | currency}}</td>
-                     <td class="items-color"><a href ng-click="removeItem($index)" class="remove-item">X</a></td>
-                     </div>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td><br><br>
-                        <button type="button" class="btn btn-default btn-round-lg btn-lg shopping-btn">
-                        Continue shopping
-                        </button>
-                     </td>
-                     <td></td>
-                     <td>
-                        <br><br>
-                        <div class="promo-code">
-                           <button type="button" class="btn btn-secondary promo-code-btn" disabled="disabled">
-                              <img src="images/PormoCode.png" class="promo-image">
-                              <p class="promo-text">Promo Code</p>
-                              <span class="glyphicon glyphicon-arrow-right arrow-right-promo-code" aria-hidden="true"></span>
-                           </button>
-                        </div>
-                     </td>
-                     <td></td>
-                     <td></td>
-                     <td class="total-heading"> <br><br><i><sup>Total:</sup></i>&nbsp;&nbsp;<span class="total-price" style="font-size:25px;"><b>{{total() | currency}}<b></td>
-                     <td><br><br></td>
-                     <td><br><br>
-                        <button type="button" class="btn btn-primary next-step" onclick="step_process(1, 2)">Next Step
-                        <span class="glyphicon glyphicon-arrow-right arrow-right-next" aria-hidden="true"></span>
-                        </button>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-            <br />
-            <!-- </div> -->
-         </div>
-         <div class="block" id="block2">
-            <div class="wrap">
-               <div class="delivery-btn-group">
-                  <button type="button" class="btn btn-default delivery-btn">Free Delivery</button>
-                  <button type="button" class="btn btn-default delivery-btn">Express Delivery $35</button>
-               </div>
-               <!-- <div class="delivery-options"> -->
-               <table class="table-info">
-                  <tr>
-                     <td>First name<input type="text" name="FirstName" value="Mickey" class="input-text"></td>
-                     <td></td>
-                     <td>Last name<input type="text" name="FirstName" value="Mickey" class="input-text"></td>
-                  </tr>
-                  <tr>
-                     <br><br>
-                     <td>Phone number<input type="text" name="FirstName" value="Mickey" class="input-text"></td>
-                     <td></td>
-                     <td>Email<input type="text" name="FirstName" value="Mickey" class="input-text"></td>
-                  </tr>
-                  <tr>
-                     <td>
-                        Country
-                        <select class="select-option">
-                           <option value="volvo">South Africa</option>
-                           <option value="saab">Brazil</option>
-                           <option value="opel">Portugal</option>
-                        </select>
-                     </td>
-                     <td></td>
-                     <td>
-                        City
-                        <select class="select-option">
-                           <option value="volvo">Gauteng</option>
-                           <option value="saab">Sao Paolo</option>
-                           <option value="opel">Porto</option>
-                        </select>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>Adress<textarea></textarea></td>
-                     <td></td>
-                     <td style="padding-bottom: 57px;">Zip code<input type="text" name="FirstName" value="0214" style="width:200px"></td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <button type="button" class="btn btn-default back-btn" onclick="step_process(2, 1, 'desc')" class="butt">
-                        Back
-                        </button>
-                     </td>
-                     <td></td>
-                     <td></td>
-                     <td>
-                        <button type="button" class="btn btn-primary next-step-delivery" onclick="step_process(2, 3)">Next Step
-                        <span class="glyphicon glyphicon-arrow-right arrow-right-next" aria-hidden="true"></span>
-                        </button>
-                        <!-- </div> -->
-                     </td>
-            </div>
-            </tr>
-            </table>
-            <!-- </div> -->
-            <br />  <br />  <br />
-         </div>
+        </div>
+        </div>
       </div>
-      <div class="block" id="block3">
-         <div class="wrap">
-            <h2>Payment Details</h2>
-            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis
-               consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-               Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi
-               erat porttitor ligula, eget lacinia odio sem nec elit. Integer posuere erat a ante
-               venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur
-               adipiscing elit.
-            </p>
-            <br />
-            <button type="button" class="btn btn-primary next-step" onclick="step_process(3, 4)">Next Step
-            <span class="glyphicon glyphicon-arrow-right arrow-right-next" aria-hidden="true"></span>
-            </button>
-         </div>
+
+      <div class="row second-row">
+        <div class="col-sm-6 secondrow-leftfeed">
+          <img src="/images/ninja.jpg">
+          <a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/?hl=en">
+            <span class="fa fa-instagram instagram2-icon"></span>
+          </a>
+          <div class="firstfeed">
+            <h4>Username 1 @handle</h6>
+              <p>#InstagramDaily</p>
+            <div class="instagram-feed2">
+              <div class="instagram-row2-images">
+                <img src="/images/george.jpg" class="instagram-row2-images">
+              </div>
+              <div class="instagram-row2-images">
+                <img src="/images/jabu1.jpg" class="instagram-row2-images">
+              </div>
+              <div class="instagram-row2-images">
+                <img src="/images/messi1.jpg" class="instagram-row2-images">
+              </div>
+              <div class="instagram-row2-images">
+                <img src="/images/pal.jpg" class="instagram-row2-images">
+              </div>
+            </div>
+              <br><br>
+              <p class="posted-date">Posted 2h ago</p>
+              <hr>
+              <div class="share-feed3">
+                <h4 class="glyphicon glyphicon-eye-open"></h4><a href="#">VIEW ORIGINAL</a></span>&nbsp;&nbsp;
+                <i class="fa fa-chain" style="font-size:20px;"></i><a href="#">SHARE</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 secondrow-rightfeed">
+          <img src="/images/ninja.jpg">
+          <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/login">
+           <span class="fa fa-twitter twitter2-icon"></span>
+          </a>
+          <div class="firstfeed">
+            <h4>Username 1 @handle</h6>
+            <p>Want a dose of #TwitterDaily? RT this
+              and we'll make sure you never miss the
+              insights!</p>
+              <p class="posted-date">Posted 1 day ago</p>
+              <hr>
+              <div class="share-feed4">
+                <h4 class="glyphicon glyphicon-eye-open"></h4><a href="#">VIEW ORIGINAL</a></span>&nbsp;&nbsp;
+                <i class="fa fa-chain" style="font-size:20px;"></i><a href="#">SHARE</a>
+              </div>
+          </div>
+        </div>
       </div>
-      <div class="block" id="block4">
-         <div class="wrap">
-            <h2>Confirmation</h2>
-            <p>Payment Completed Successfully.</p>
-            <br />
-            <button type="button" class="btn btn-primary" onclick="">Close
-            </button>
-         </div>
+
+      <div class="row third-row">
+        <div class="col-sm-6 thirdrow-leftfeed">
+            <img src="/images/tshepo.jpg">
+            <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/login">
+             <span class="fa fa-twitter twitter3-icon"></span>
+            </a>
+          <div class="firstfeed">
+            <h4>Username 1 @handle</h6>
+            <p>Want a dose of #TwitterDaily? RT this
+              and we'll make sure you never miss the
+              insights!</p>
+              <div class="instagram-row3-images">
+                <img src="/images/george.jpg" class="instagram-row3-images">
+              </div>
+              <div class="instagram-row3-images">
+                <img src="/images/jabu2.jpg" class="instagram-row3-images">
+              </div>
+              <div class="instagram-row3-images">
+                <img src="/images/george2.jpg" class="instagram-row3-images">
+              </div>
+              <div class="instagram-row3-images">
+                <img src="/images/messi.jpg" class="instagram-row3-images">
+              </div>
+              <p class="posted-date">Posted 10 April ago</p>
+              <hr>
+              <div class="share-feed5">
+                <h4 class="glyphicon glyphicon-eye-open"></h4><a href="#">VIEW ORIGINAL</a></span>&nbsp;&nbsp;
+                <i class="fa fa-chain" style="font-size:20px;"></i><a href="#">SHARE</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 thirdrow-rightfeed">
+          <img src="/images/tshepo.jpg">
+          <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/login">
+           <span class="fa fa-twitter twitter4-icon"></span>
+          </a>
+          <div class="firstfeed">
+            <h4>Username 1 @handle</h6>
+            <p>Want a dose of #TwitterDaily? RT this
+              and we'll make sure you never miss the
+              insights!</p>
+              <p class="posted-date">Posted 1 day ago</p>
+              <hr>
+              <div class="share-feed6">
+                <h4 class="glyphicon glyphicon-eye-open"></h4><a href="#">VIEW ORIGINAL</a></span>&nbsp;&nbsp;
+                <i class="fa fa-chain" style="font-size:20px;"></i><a href="#">SHARE</a>
+              </div>
+          </div>
+        </div>
       </div>
-      <!-- </div> -->
-      </div>
-   </body>
+    </div>
+  </div>
+
+</body>
 </html>
-
-<script>
-	var app = angular.module("myApp", []);
-  app.controller("myCtrl", function ($scope) {
-	$scope.products = [{
-			source: "images/NuBalanceBag.png",
-			item: "New Balance Men's Street Backpack",
-			type: "Bags",
-			color: "Black",
-			size: "S",
-			price: 485,
-			amount: 2,
-			cost: ""
-		},
-		{
-			source: "images/CamoJacket.png",
-			item: "Lyle & Scott Men's Short Sleeve Camo Pocket",
-			type: "Scarves",
-			color: "White",
-			size: "XXL",
-			price: 76,
-			amount: 1,
-			cost: ""
-		}
-	]
-
-	$scope.increase = function (item) {
-		var products = $scope.products;
-
-		for (var i = 0; products.length; i++) {
-			if (products[i].id === item.id) {
-				products[i].amount += 1;
-			}
-		}
-	};
-
-	$scope.decrease = function (item) {
-		var products = $scope.products;
-
-		for (var i = 0; products.length; i++) {
-			if (products[i].id === item.id) {
-				products[i].amount -= 1;
-			}
-		}
-	};
-
-	$scope.removeItem = function (index) {
-		$scope.products.splice(index, 1);
-	};
-
-	$scope.total = function () {
-		var total = 0;
-		angular.forEach($scope.products, function (item) {
-			total += item.amount * item.price;
-		});
-		return total;
-	}
-});
-</script>
